@@ -9,11 +9,11 @@ const DisplayAnimalModule = ({ allAnimals }) => {
           {allAnimals?.map((animal) => (
             <div
               key={animal.id}
-              className="bg-black rounded-lg overflow-hidden"
+              className="bg-black rounded-lg overflow-hidden text-center"
             >
               <Image
-                width={150}
-                height={150} 
+                width={100}
+                height={100} 
                 src={animal.imageUrl}
                 alt={animal.name}
                 className="w-full h-40 object-cover"

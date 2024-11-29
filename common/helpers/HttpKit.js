@@ -6,10 +6,10 @@ const HttpKit = {
   getAllCategory: async () => {
     try {
       const res = await axios.get(`${BASE_URL}/category/all-category`);
-      return res.data; // Return the data, which you can use in react-query
+      return res.data; 
     } catch (error) {
       console.log("Error to fetch All category:", error);
-      return { category: [] }; // Return an empty array if error occurs
+      return { category: [] };
     }
   },
   fetchAnimalByCategory: async (id) => {

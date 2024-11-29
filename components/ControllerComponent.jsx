@@ -6,7 +6,6 @@ const ControllerComponent = ({allCategory, setRefreshCategory, setRefreshItem}) 
   const [openAnimalModal, setOpenAnimalModal] = useState(false);
   const [openCategoryModal, setOpenCategoryModal] = useState(false);
 
-  // Function to close modals
   const closeModal = () => {
     setOpenAnimalModal(false);
     setOpenCategoryModal(false);
@@ -14,7 +13,6 @@ const ControllerComponent = ({allCategory, setRefreshCategory, setRefreshItem}) 
 
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
-      {/* Buttons */}
       <div className="flex space-x-4">
         <button
           onClick={() => setOpenAnimalModal(true)}
@@ -29,13 +27,11 @@ const ControllerComponent = ({allCategory, setRefreshCategory, setRefreshItem}) 
           Add Category
         </button>
       </div>
-
-      {/* Animal Modal */}
+      {/* Animal Modal  popup*/}
       {openAnimalModal && (
        <AnimalModal closeModal={closeModal} allCategory={allCategory} setRefreshItem={setRefreshItem}/>
       )}
-
-      {/* Category Modal */}
+      {/* Category Modal popup*/}
       {openCategoryModal && (
        <CategoryModal closeModal={closeModal} setRefreshCategory={setRefreshCategory}/>
       )}
