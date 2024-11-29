@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5006/api/v1";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const HttpKit = {
   getAllCategory: async () => {
