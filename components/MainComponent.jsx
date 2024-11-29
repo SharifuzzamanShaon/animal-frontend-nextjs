@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 const MainComponent = () => {
   const [allCategory, setCategory] = useState([]);
-  const [allAnimals, setAllAnimals] = useState([]);
+  const [allAnimals, setAllAnimals] = useState(null);
   const [originalAnimals, setOriginalAnimals] = useState([]);
   const [refreshCategory, setRefreshCategory] = useState(false); // refresh after adding new category
   const [refreshItem, setRefreshItem] = useState(false); // refresh itmes after adding new item
