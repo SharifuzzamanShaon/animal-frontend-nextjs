@@ -8,11 +8,9 @@ const CategoryModal = ({ closeModal, setRefreshCategory }) => {
 
   const handleAddCategory = async (e) => {
     e.preventDefault();
-    console.log(categoryName);
     try {
       loadingToaster = toast.loading("Adding new category...");
       const res = await HttpKit.addNewCategory(categoryName); 
-      console.log(res);
       
       if (res?.success === true) {
         toast.dismiss(loadingToaster);

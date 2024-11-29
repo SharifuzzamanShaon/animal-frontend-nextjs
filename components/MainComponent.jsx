@@ -26,11 +26,7 @@ const MainComponent = () => {
 
   const fetchData = async () => {
     try {
-      // Check if a toast is already active
-      if (!loadinToaste) {
-        loadinToaste = toast.loading("Loading..., please wait a bit 💤");
-      }
-
+      loadinToaste = toast.loading("Loading..., please wait a bit 💤");
       const res = await HttpKit.fetchAllAnimal();
       setAllAnimals(res?.data);
       setOriginalAnimals(res?.data);

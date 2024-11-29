@@ -35,20 +35,26 @@ const AnimalModal = ({ closeModal, allCategory, setRefreshItem }) => {
   };
   let loadingToaster;
   const handleAddNewAnimal = async () => {
+    if (!newAnimal.name || !newAnimal.img || !newAnimal.categoryId) {
+      toast.error(
+        "All fields are required. Please fill out the form completely."
+      );
+      return;
+    }
     loadingToaster = toast.loading("Adding new animal..");
     try {
       const res = await HttpKit.addNewAnimal(newAnimal);
       if (res?.success === true) {
-        toast.dismiss(loadingToaster)
+        toast.dismiss(loadingToaster);
         toast.success(`${newAnimal.name} added successfully!`);
-        setRefreshItem(true)
-        closeModal(); 
+        setRefreshItem(true);
+        closeModal();
       } else {
-        toast.dismiss(loadingToaster)
+        toast.dismiss(loadingToaster);
         toast.error("Failed to add the animal. Please try again.");
       }
     } catch (error) {
-      toast.dismiss(loadingToaster)
+      toast.dismiss(loadingToaster);
       toast.error(`Error: ${error?.message || "Please try again"}`);
     }
   };
